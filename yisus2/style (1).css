@@ -1,0 +1,255 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI';
+}
+/* ... FONDO DE PANTALLA ... */
+
+html,body{
+  display: grid;
+  height: 120%;
+  width: 120%;
+  place-items: center;
+  background: linear-gradient(-135deg, #f5f5f5, #fcfcfc);
+  background-image: url("sus.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+::selection{
+  background: #4158d0;
+  color: #fff;
+}
+.wrapper{
+  width: 360px;
+  background: #fff;
+  border-radius: 35px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg, #50c8c2, #0c0c0c);
+}
+.wrapper form{
+  padding: 10px 30px 50px 30px;
+}
+.wrapper form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+.wrapper form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid rgb(146, 142, 142);
+  border-radius: 35px;
+  transition: all 0.3s ease;
+}
+.wrapper form .field input:focus,
+form .field input:valid{
+  border-color: #17636d;
+}
+.wrapper form .field label{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+form .field input:focus ~ label,
+form .field input:valid ~ label{
+  top: 0%;
+  font-size: 16px;
+  color: #0f413e;
+  background: #fff;
+  transform: translateY(-50%);
+}
+form .content{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  align-items: center;
+  justify-content: space-around;
+}
+form .content .checkbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form .content input{
+  width: 15px;
+  height: 15px;
+  background: red;
+}
+form .content label{
+  color: #262626;
+  user-select: none;
+  padding-left: 5px;
+}
+form .content .pass-link{
+  color: "";
+}
+form .field input[type="submit"]{
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #50c8c2, #0c0c0c);
+  transition: all 0.3s ease;
+  
+}
+form .field input[type="submit"]:active{
+  transform: scale(0.95);
+}
+form .signup-link{
+  color: #161515;
+  margin-top: 20px;
+  text-align: center;
+}
+form .pass-link a,
+form .signup-link a{
+  color: #1833ac;
+  text-decoration: none;
+}
+form .pass-link a:hover,
+form .signup-link a:hover{
+  text-decoration: underline;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI';
+}
+
+html, body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: linear-gradient(-135deg, #f5f5f5, #fcfcfc);
+  background-image: url("sus.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: background 0.5s ease; /* Agregamos transición de fondo */
+}
+
+::selection {
+  background: #4158d0;
+  color: #fff;
+}
+
+/* ... ANIMACIONES ... */
+
+.wrapper {
+  width: 380px;
+  background: #fff;
+  border-radius: 35px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Agregamos esto para ocultar el desbordamiento de las animaciones */
+  opacity: 0; /* Inicialmente oculto para animación de entrada */
+  animation: fadeIn 1s forwards; /* Animación de entrada */
+}
+
+.wrapper .title {
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg, #50c8c2, #0c0c0c);
+  transform: translateY(-50px); /* Inicialmente desplazado hacia arriba para animación de entrada */
+  opacity: 0; /* Inicialmente oculto para animación de entrada */
+  animation: slideIn 1s forwards, fadeIn 1s forwards; /* Animaciones de desplazamiento y entrada */
+}
+
+.wrapper form {
+  padding: 10px 30px 50px 30px;
+}
+
+
+
+/* Nuevas reglas de animación */
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* CANCERLAR */
+
+
+.button-group {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.cancel-button {
+  display: inline-block;
+  text-align: center;
+  padding: 15px 125px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 29px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Añadido transform */
+}
+
+.login-button {
+  background: linear-gradient(-135deg, #50c8c2, #0c0c0c);
+}
+
+.cancel-button {
+  background: linear-gradient(-135deg, #50c8c2, #0c0c0c); /* Cambiado el color de fondo */
+}
+
+.login-button:hover,
+.cancel-button:hover {
+  transform: scale(1.05); /* Añadido aumento de escala al pasar el ratón */
+}
+
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+
+
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Registro - KENYO</title>
+    <link rel="stylesheet" href="style (1).css">
+    <style>
+      .field {
+        position: relative;
+      }
+
+      .toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var contrasenaInput = document.getElementById('contrasena');
+        var togglePassword = document.getElementById('togglePassword');
+
+        togglePassword.addEventListener('click', function () {
+          if (contrasenaInput.type === 'password') {
+            contrasenaInput.type = 'text';
+          } else {
+            contrasenaInput.type = 'password';
+          }
+        });
+
+        // Agregar función para validar el formulario
+        document.querySelector('form').addEventListener('submit', function (event) {
+          var nombreInput = document.getElementsByName('nombre')[0];
+          var apellidoPaternoInput = document.getElementsByName('apellido_paterno')[0];
+          var apellidoMaternoInput = document.getElementsByName('apellido_materno')[0];
+          var telefonoInput = document.getElementsByName('telefono')[0];
+          var correoInput = document.getElementsByName('correo')[0];
+          var edadInput = document.getElementsByName('edad')[0];
+          var generoInput = document.getElementsByName('genero')[0];
+
+          // Validar que el campo de nombre solo contenga letras
+          if (!/^[a-zA-Z]+$/.test(nombreInput.value)) {
+            alert('El campo de nombre solo debe contener letras.');
+            event.preventDefault(); // Evitar que el formulario se envíe
+            return;
+          }
+
+          // Validar que el campo de apellido paterno solo contenga letras
+          if (!/^[a-zA-Z]+$/.test(apellidoPaternoInput.value)) {
+            alert('El campo de apellido paterno solo debe contener letras.');
+            event.preventDefault(); // Evitar que el formulario se envíe
+            return;
+          }
+
+          // Validar que el campo de apellido materno solo contenga letras
+          if (!/^[a-zA-Z]+$/.test(apellidoMaternoInput.value)) {
+            alert('El campo de apellido materno solo debe contener letras.');
+            event.preventDefault(); // Evitar que el formulario se envíe
+            return;
+          }
+
+          
+          // Validar que el correo tenga el dominio @gmail.com
+          if (!/\b@gmail\.com$/.test(correoInput.value)) {
+            alert('El correo debe tener el dominio @gmail.com.');
+            event.preventDefault(); // Evitar que el formulario se envíe
+            return;
+          }
+
+          // Validar que la edad esté entre 15 y 19 años
+          var edad = parseInt(edadInput.value);
+          if (isNaN(edad) || edad < 15 || edad > 19) {
+            alert('La edad debe estar entre 15 y 19 años.');
+            event.preventDefault(); // Evitar que el formulario se envíe
+            return;
+          }
+
+          // Validar que se haya seleccionado un género
+          if (generoInput.value === "") {
+            alert('Por favor, selecciona tu género.');
+            event.preventDefault(); // Evitar que el formulario se envíe
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">Regístrate</div>
+      <form action="conexion2.php" method="post">
+        <div class="field">
+          <input type="text"  name="correo" required>
+          <label for="correo">Correo Electrónico</label>
+        </div>
+        <div class="field">
+          <input type="password" name="contrasena" id="contrasena" required>
+          <label for="contrasena">Contraseña</label>
+          <span class="toggle-password" id="togglePassword">&#128065;</span>
+        </div>
+        <div class="field">
+          <input type="text" name="nombre" required>
+          <label for="nombre">Nombre o apodo</label>
+        </div>
+        <div class="field">
+          <input type="text" name="apellido_paterno" required>
+          <label for="apellido_paterno">Apellido paterno</label>
+        </div>
+        <div class="field">
+          <input type="text" name="apellido_materno" required>
+          <label for="apellido_materno">Apellido materno</label>
+        </div>
+        <div class="field">
+          <input type="text" name="localidad" required>
+          <label for="localidad">Localidad</label>
+        </div>
+        <div class="field">
+          <input type="number" name="edad" required>
+          <label for="edad">Edad</label>
+        </div><br>
+        <div>
+          <label for="genero">Género:</label>
+          <select name="genero" required>
+            <option value="" disabled selected>Selecciona tu género</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+          </select>
+        </div>
+        <div class="field">
+          <input type="tel" name="telefono" required>
+          <label for="telefono">Teléfono de contacto</label>
+        </div>
+        <div class="field">
+          <input type="text" name="domicilio" required>
+          <label for="domicilio">Domicilio</label>
+        </div>
+        <div class="field">
+          <input type="submit" value="Registrarse">
+          <div class="login-link">¿Recuerda su cuenta? <a href="index.html">Iniciar Sesión</a></div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="java.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('tu-imagen-de-fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    #container {
+      text-align: center;
+      background: rgba(241, 241, 245, 0.8); /* Fondo semi-transparente para mejorar la legibilidad del texto */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    #cecytem-image {
+      cursor: pointer;
+    }
+
+    h1, h2 {
+      color: inherit; /* Hereda el color del texto del contenedor padre */
+    }
+
+    button {
+      background-color: #2ecc71; /* Cambia el color de fondo del botón a verde */
+      color: #f1e6e6; /* Cambia el color del texto del botón a blanco */
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #27ae60; /* Cambia el color de fondo del botón a un tono más oscuro al pasar el ratón sobre él */
+    }
+
+    .transparent {
+      opacity: 0.5; /* Cambia la opacidad de la imagen al 50% */
+      transition: opacity 0.5s; /* Agrega una transición suave para el cambio de opacidad */
+    }
+
+    .transparent:hover {
+      opacity: 1; /* Restaura la opacidad al 100% al pasar el ratón sobre la imagen */
+    }
+  </style>
+  <title>Bienvenida Cecytem</title>
+</head>
+<body>
+  <form action="index.html">
+    <div id="container">
+      <h1>Bienvenido</h1>
+      <h2>Comunidad Cecytem</h2>
+      <p style="align-items: center;">
+        <img id="cecytem-image" class="transparent" src="mas.jpg" alt="Cecytem Logo" width="200" onclick="mostrarBienvenida()">
+      </p>
+      <div>
+        <button onclick="mostrarFormulario('form-container')">Iniciar</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    function mostrarBienvenida() {
+      document.querySelector('#container h1').textContent = 'Bienvenidos';
+    }
+  </script>
+</body>
+</html>

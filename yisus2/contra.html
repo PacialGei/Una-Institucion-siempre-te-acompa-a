@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Restablecimiento de Contraseña - KENYO</title>
+    <link rel="stylesheet" href="style (1).css">
+    <style>/* DISEÑO DE UN OJO DE PARA VER CONTRASEÑA */
+
+      .field {
+        position: relative;
+      }
+
+      .toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var contrasenaInput = document.getElementById('contrasena');
+        var togglePassword = document.getElementById('togglePassword');
+
+        togglePassword.addEventListener('click', function () {
+          if (contrasenaInput.type === 'password') {
+            contrasenaInput.type = 'text';
+          } else {
+            contrasenaInput.type = 'password';
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">Restablecer Contraseña</div>
+      <form action="conexion3.php" method="post">
+        <div class="field">
+          <input type="text" name="usuario" required>
+          <label for="usuario">Correo Electrónico</label>
+        </div>
+        <div class="field">
+          <input type="password" name="pass" id="contrasena" required>
+          <label for="pass">Contraseña</label>
+          <span class="toggle-password" id="togglePassword">&#128065;</span>
+        </div>
+        <div class="field">
+          <input type="submit" value="Restablecer">
+        </div>
+        <p style="align-items: center;"><div class="login-link">¿Recuerda su contraseña? <a href="index.html">Iniciar Sesión</a></div></p>
+      </form>
+    </div>
+  </body>
+</html>

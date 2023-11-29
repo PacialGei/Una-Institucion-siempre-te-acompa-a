@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:lightskyblue;
+    font-family: 'Fuente deseada', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+      
+
+  #container {
+    text-align: center;
+  }
+
+  button, img {
+    padding: 10px 20px;
+    left: auto;
+    font-size: 16px;
+    margin: 5px;
+  }
+
+  #form-container, #additional-form {
+    display: none;
+    margin-top: 20px;
+  }
+
+  input, label {
+    margin: 5px;
+    display: block;
+  }
+  /* Estilos para el botón */
+  button {
+    padding: 10px 60px;
+    font-size: 16px;
+    background-color: #000000;
+    color: #eeeeee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #2980b9;
+  }
+
+  /* Animación para el formulario */
+  .form-container {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+ 
+  
